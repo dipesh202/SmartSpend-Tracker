@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Spend+</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-indian-rupee-sign"></i> Smart Spend+</h1>
+        <p>Track your expenses and manage your budget efficiently</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Top Row -->
+            <div class="card add-expense">
+                <h2><i class="fas fa-plus-circle"></i> Add New Expense</h2>
+                <div class="current-date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span id="current-date"></span>
+                </div>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="category"><i class="fas fa-tags"></i> Category:</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="food">Food & Dining</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="bills">Bills & Utilities</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount"><i class="fas fa-indian-rupee-sign"></i> Amount:</label>
+                        <input type="number" id="amount" required min="0" step="0.01" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="description"><i class="fas fa-align-left"></i> Description:</label>
+                        <textarea id="description" placeholder="Enter expense description (optional)"></textarea>
+                    </div>
+                    <button type="submit">
+                        <i class="fas fa-plus"></i> Add Expense
+                    </button>
+                </form>
+            </div>
+
+            <div class="card view-expenses">
+                <h2><i class="fas fa-chart-line"></i> Expense Summary</h2>
+                <div class="summary">
+                    <div class="total">
+                        <h3>Today's Total</h3>
+                        <span id="today-total"><i class="fas fa-indian-rupee-sign"></i>0.00</span>
+                    </div>
+                    <div class="comparison">
+                        <h3><i class="fas fa-chart-bar"></i> Comparison</h3>
+                        <p>
+                            <span>Yesterday</span>
+                            <span id="yesterday-total"><i class="fas fa-indian-rupee-sign"></i>0.00</span>
+                        </p>
+                        <p>
+                            <span>Last Month</span>
+                            <span id="last-month-total"><i class="fas fa-indian-rupee-sign"></i>0.00</span>
+                        </p>
+                        <p>
+                            <span>Last Year</span>
+                            <span id="last-year-total"><i class="fas fa-indian-rupee-sign"></i>0.00</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="expense-list">
+                    <h3><i class="fas fa-list"></i> Today's Expenses</h3>
+                    <ul id="expenses-list"></ul>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="card chart-section">
+                <h2><i class="fas fa-pie-chart"></i> Expense Distribution</h2>
+                <img id="expense-chart" src="" alt="Expense Distribution Chart">
+            </div>
+
+            <div class="card budget-section">
+                <h2><i class="fas fa-wallet"></i> Budget & Savings</h2>
+                <div class="budget-input">
+                    <input type="number" id="budget-amount" placeholder="Set monthly budget">
+                    <button id="set-budget">
+                        <i class="fas fa-save"></i> Set Budget
+                    </button>
+                </div>
+                <div class="budget-status">
+                    <p>Current Month Total: <span id="month-total"><i class="fas fa-indian-rupee-sign"></i>0.00</span></p>
+                    <button id="reset-expenses" class="reset-btn">
+                        <i class="fas fa-trash"></i> Reset All Expenses
+                    </button>
+                </div>
+                <div class="savings-tips">
+                    <h3><i class="fas fa-lightbulb"></i> Savings Tips</h3>
+                    <ul>
+                        <li>Set aside 20% of your income for savings</li>
+                        <li>Create an emergency fund with 3-6 months of expenses</li>
+                        <li>Review and cut unnecessary subscriptions</li>
+                        <li>Use cashback and reward programs</li>
+                        <li>Consider investing in index funds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html> 
